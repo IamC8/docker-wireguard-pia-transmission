@@ -9,6 +9,8 @@ I only have one problem, but will get to that in a while.
 <B>What you need:</B>
 <li>Working docker setup
 <li>PIA account ( I haven't tried any others)
+<li><a href="https://github.com/pia-foss/manual-connections">Get the original PIA scripts from here</a>
+<li><a href="https://github.com/silvinux/transmission-alpine">I used one script from here</a>
 <p>
 I have made the container to accept an SSH tunnel connection which tunnels my https connection , because I have a myanonamouse account, and they check that the seedbox and the ip connecting to their site is the same.
 
