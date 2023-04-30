@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  myapp:
+    sysctls:
+      - net.ipv4.conf.all.src_valid_mark=1
+    build:
+      context: .
+      dockerfile: Dockerfile
+    cap_add:
+      - NET_ADMIN
+    environment:
+      - PIA_USER=p12345678
+      - PIA_PASS=S6dBgonSgJmdxHcKojA3
+      - USERNAME=admin
+      - PASSWORD=password
+    ports:
+      - 9091:9091
+      - 33:22
+    volumes:
+      - /media/seedbox/docker/transmission/downloads:/transmission/downloads
+      - /media/seedbox/docker/transmission/incomplete:/transmission/incomplete
+      - /media/seedbox/docker/transmission/watching:/transmission/watching
+      - /media/seedbox/docker/transmission/config:/etc/transmission-daemon
+
+
+
+
+
