@@ -1,5 +1,4 @@
-version: '3.8'
-
+version: '3.9'
 services:
   myapp:
     sysctls:
@@ -10,8 +9,8 @@ services:
     cap_add:
       - NET_ADMIN
     environment:
-      - PIA_USER=p12345678
-      - PIA_PASS=S6dBgonSgJmdxHcKojA3
+      - PIA_USER=p123456
+      - PIA_PASS=password
       - USERNAME=admin
       - PASSWORD=password
     ports:
@@ -22,8 +21,8 @@ services:
       - /media/seedbox/docker/transmission/incomplete:/transmission/incomplete
       - /media/seedbox/docker/transmission/watching:/transmission/watching
       - /media/seedbox/docker/transmission/config:/etc/transmission-daemon
-
-
-
-
-
+    deploy:
+      restart_policy:
+        condition: any
+        delay: 15s
+        window: 120s
