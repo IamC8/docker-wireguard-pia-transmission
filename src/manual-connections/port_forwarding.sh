@@ -146,7 +146,7 @@ if [[ ! $(pgrep -f /usr/bin/transmission-daemon) ]]; then
     fi
     echo "$port" > PORT_FORWARDED
 	/etc/init.d/sshd restart
-    (setsid /start-transmission.sh &)
+    /start-transmission.sh &
 fi
 # Now we have all required data to create a request to bind the port.
 # We will repeat this request every 15 minutes, in order to keep the port
@@ -173,5 +173,7 @@ while true; do
     echo -e Refreshed on'\t'"${green}$(date)${nc}"
     echo -e Expires on'\t'"${red}$(date --date="$expires_at")${nc}"
     echo -e "\n${green}This script will need to remain active to use port forwarding, and will refresh every 15 minutes.${nc}\n"
+    # echo "$port" > PORT_FORWARDED
+    # sleep 15 minutes
     sleep 900
 done
