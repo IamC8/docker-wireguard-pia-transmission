@@ -1,6 +1,6 @@
-version: '3.9'
+version: '3.11'
 services:
-  myapp:
+  transmission404:
     sysctls:
       - net.ipv4.conf.all.src_valid_mark=1
     build:
